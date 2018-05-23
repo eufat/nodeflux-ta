@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <title>Nodeflux Technical Assesment</title>
+    <link rel="stylesheet" href="./normalize.css" />
+</head>
+<style>
+    .container {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 720px) {
+        .grid {
+            width: -webkit-calc(50% - 2px) !important;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .grid {
+            width: -webkit-calc(100% - 2px) !important;
+        }
+    }
+
+    .grid {
+        width: -webkit-calc(25% - 2px);
+        border: 1px solid black;
+        height: 100px;
+        background-color: white;
+    }
+
+    .grid:nth-child(2n) {
+        background-color: grey;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="grid">
+
+        </div>
+        <div class="grid">
+
+        </div>
+        <div class="grid">
+
+        </div>
+        <div class="grid">
+
+        </div>
+    </div>
+</body>
+
+</html>
