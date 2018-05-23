@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <title>Nodeflux Technical Assesment</title>
+</head>
+<style>
+    #dnd {
+        height: 200px;
+        width: 200px;
+        border: 2px dashed grey;
+    }
+</style>
+
+<body>
+
+    </input>
+    <p>Sample to drap:</p>
+    <pre>http://myhswm.org/images/sized/images/animals/Rapunzel-HSWM-7-256x256.jpg</pre>
+    <img src="http://myhswm.org/images/sized/images/animals/Rapunzel-HSWM-7-256x256.jpg"></img>
+
+    <p>Input to drop:</p>
+    <input type="text" placeholder="Enter URL" oninput="url_handler(event)">
+    <div id="dnd" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Drop Image Here
+    </div>
+
+    <p>Output preview:</p>
+    <img id="preview"></img>
+
+    <script>
+        const preview = document.getElementById("preview");
+
+        function url_handler(ev) {
+            ev.preventDefault();
+            const data = ev.target.value;
+            preview.setAttribute("src", data);
+        }
+
+        function dragover_handler(ev) {
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = "move"
+        }
+
+        function drop_handler(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("url");
+            preview.setAttribute("src", data);
+        }
+    </script>
+</body>
+
+</html>
