@@ -1,10 +1,11 @@
 function foo1(d) {
-  const last = function() {
+  const stop = d == 9;
+  const last = d => {
     console.log("Called on last index " + d);
   };
 
-  const stop = d > 9 ? last : ++d;
-  foo2(d, stop);
+  const callback = stop ? last(d + 1) : null;
+  if (!stop) foo2(++d, callback);
 }
 
 function foo2(d, cb) {
