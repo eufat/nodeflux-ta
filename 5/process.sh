@@ -1,0 +1,1 @@
+sed -i -e 's/folder1/folder2/' -e 's/\in-folder1\///g' example.txt
